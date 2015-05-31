@@ -1,3 +1,7 @@
 Release 1.0.0
 ====================
 Initial release
+
+Release 1.0.1
+====================
+-Changed bower package to require angular 1.3.x. Angular 1.4 introduces breaking changes to ngCookie
