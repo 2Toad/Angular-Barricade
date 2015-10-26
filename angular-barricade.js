@@ -3,7 +3,7 @@
  * Copyright (C)2014 2Toad, LLC.
  * https://github.com/2Toad/Angular-Barricade
  *
- * Version: 1.0.1
+ * Version: 1.0.2
  * License: MIT
  */
 
@@ -12,8 +12,8 @@
 
     angular.module('ttBarricade', [
 
-    ]).factory('barricade', ['$q', '$http', '$cookieStore', '$rootScope', '$route',
-        function ($q, $http, $cookieStore, $rootScope, $route) {
+    ]).factory('barricade', ['$q', '$http', '$cookies', '$rootScope', '$route',
+        function ($q, $http, $cookies, $rootScope, $route) {
             var rejectionStatusCode = -1,
                 handledStatusCodes = [rejectionStatusCode, 401, 403, 419],
                 service = {
@@ -83,7 +83,7 @@
                 }
 
                 function restoreLastSession() {
-                    var cookie = $cookieStore.get('barricade');
+                    var cookie = $cookies.getObject('barricade');
                     if (!cookie) return;
 
                     if (cookie.expiration < now()) setStatus(419);
@@ -118,7 +118,7 @@
                         };
 
                         setHeader(cookie.token);
-                        $cookieStore.put('barricade', cookie);
+                        $cookies.putObject('barricade', cookie);
                     }
                 }
             }
@@ -140,7 +140,7 @@
             function httpRequestHandler(request) {
                 if (dontBlock(request.url)) return request;
 
-                // We need to flag this for a reload so Angular will fetch the blocked URL 
+                // We need to flag this for a reload so Angular will fetch the blocked URL
                 // from the server after a successful login
                 service.reload = true;
 
@@ -177,7 +177,7 @@
 
             function endSession() {
                 delete $http.defaults.headers.common.Authorization;
-                $cookieStore.remove('barricade');
+                $cookies.remove('barricade');
             }
 
             function now() {
