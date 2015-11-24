@@ -1,3 +1,9 @@
+# 1.0.3
+
+## Bug Fixes
+
+* rejectionStatusCode: changed from -1 to "barricade" to prevent collisions with external status codes
+
 # 1.0.2
 
 ## Improvements

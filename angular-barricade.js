@@ -3,7 +3,7 @@
  * Copyright (C)2014 2Toad, LLC.
  * https://github.com/2Toad/Angular-Barricade
  *
- * Version: 1.0.2
+ * Version: 1.0.3
  * License: MIT
  */
 

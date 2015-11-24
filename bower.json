@@ -1,6 +1,6 @@
 {
     "name": "angular-barricade",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": "./angular-barricade.js",
     "ignore": [],
     "keywords": ["barricade", "security", "oauth", "2toad"],
