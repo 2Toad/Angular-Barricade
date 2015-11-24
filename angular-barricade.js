@@ -14,7 +14,7 @@
 
     ]).factory('barricade', ['$q', '$http', '$cookies', '$rootScope', '$route',
         function ($q, $http, $cookies, $rootScope, $route) {
-            var rejectionStatusCode = -1,
+            var rejectionStatusCode = "barricade",
                 handledStatusCodes = [rejectionStatusCode, 401, 403, 419],
                 service = {
                     authenticated: false,
@@ -25,7 +25,7 @@
                     serverErrorTemplateUrl: undefined,
                     noAuth: undefined,
                     lastNoAuth: undefined
-                }
+                };
 
             // WARNING: HERE BE DRAGONS!
             // We add a reference to $rootScope to get around the dependency recursion that
