@@ -1,3 +1,9 @@
+# 1.1.0
+
+## Improvements
+
+* **Angular**: change dependencies to require ~1.5
+
 # 1.0.3
 
 ## Bug Fixes
