@@ -1,3 +1,9 @@
+# 1.1.1
+
+## Bug Fixes
+
+* **[Issue #1](https://github.com/2Toad/Angular-Barricade/issues/1)**: Blocked URLs not reloaded after successful login
+
 # 1.1.0
 
 ## Improvements
