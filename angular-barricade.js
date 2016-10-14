@@ -106,10 +106,9 @@
                     startSession(data.access_token, data.expires_in);
                     setStatus(200);
 
-                    if (service.reload) {
-                        service.reload = false;
-                        $route.reload();
-                    }
+                    // Reload after a successful login so Angular will fetch any URLs that
+                    // were blocked by Barricade (e.g., API calls)
+                    $route.reload();
 
                     function startSession(accessToken, accessTokenDuration) {
                         var cookie = {
@@ -139,10 +138,6 @@
 
             function httpRequestHandler(request) {
                 if (dontBlock(request.url)) return request;
-
-                // We need to flag this for a reload so Angular will fetch the blocked URL
-                // from the server after a successful login
-                service.reload = true;
 
                 // Block this request from going to the server
                 console.warn('Barricade: blocking "' + request.url + '"');
