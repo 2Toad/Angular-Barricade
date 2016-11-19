@@ -3,7 +3,7 @@
  * Copyright (C)2014 2Toad, LLC.
  * https://github.com/2Toad/Angular-Barricade
  *
- * Version: 1.1.1
+ * Version: 1.1.2
  * License: MIT
  */
 
@@ -12,8 +12,8 @@
 
     angular.module('ttBarricade', [
 
-    ]).factory('barricade', ['$q', '$http', '$cookies', '$rootScope', '$route',
-        function ($q, $http, $cookies, $rootScope, $route) {
+    ]).factory('barricade', ['$q', '$http', '$cookies', '$rootScope', '$route', '$window',
+        function ($q, $http, $cookies, $rootScope, $route, $window) {
             var rejectionStatusCode = "barricade",
                 handledStatusCodes = [rejectionStatusCode, 401, 403, 419],
                 service = {
@@ -128,7 +128,11 @@
 
                 function logoutFinished() {
                     endSession();
-                    setStatus(401);
+
+                    // For security purposes, we're not using $route.reload() here. We want the
+                    // entire app to be re-instantiated (e.g., window, scopes, controllers), as
+                    // though the user had never been logged in
+                    $window.location.reload();
                 }
             }
 
