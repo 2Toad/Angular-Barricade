@@ -1,3 +1,9 @@
+# 1.1.2
+
+## Bug Fixes
+
+* **[Issue #2](https://github.com/2Toad/Angular-Barricade/issues/2)**: App memory not cleared after logout
+
 # 1.1.1
 
 ## Bug Fixes
