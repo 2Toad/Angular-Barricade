@@ -1,0 +1,25 @@
+{
+  "name": "angular-barricade",
+  "version": "1.2.0",
+  "description": "An AngularJS module for interfacing with the Barricade Web API",
+  "main": "angular-barricade.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2Toad/Angular-Barricade.git"
+  },
+  "keywords": [
+    "angular",
+    "barricade"
+  ],
+  "author": "2Toad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/2Toad/Angular-Barricade/issues"
+  },
+  "homepage": "https://github.com/2Toad/Angular-Barricade#readme",
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-cookies": "1.5.x",
+    "angular-route": "1.5.x"
+  }
+}
